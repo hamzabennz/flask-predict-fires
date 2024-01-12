@@ -14,7 +14,7 @@ def default_route():
     else:
         return jsonify({'error': 'Unsupported method'}), 405
 
-
+'''
 # Load the pre-trained model
 model_filename = 'final_model.joblib'
 loaded_model = joblib.load(model_filename)
@@ -43,4 +43,5 @@ def predict():
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+'''
 
