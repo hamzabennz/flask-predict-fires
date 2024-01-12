@@ -16,7 +16,7 @@ def default_route():
 
 
 # Load the pre-trained model
-model_filename = 'final_model.joblib'
+model_filename = './final_model.joblib'
 loaded_model = joblib.load(model_filename)
 
 
