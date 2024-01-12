@@ -1,5 +1,8 @@
 from flask import Flask, request, jsonify
 import joblib
+import os
+
+
 
 app = Flask(__name__)
 
@@ -15,8 +18,11 @@ def default_route():
         return jsonify({'error': 'Unsupported method'}), 405
 
 
-# Load the pre-trained model
-model_filename = './final_model.joblib'
+# Get the absolute path of the current directory
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Combine the current directory with the model filename
+model_filename = os.path.join(current_directory, 'final_model.joblib')
 loaded_model = joblib.load(model_filename)
 
 
