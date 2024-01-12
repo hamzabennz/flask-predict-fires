@@ -3,6 +3,18 @@ import joblib
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET', 'POST'])
+def default_route():
+    if request.method == 'GET':
+        return jsonify({'message': 'Welcome to the default route!'})
+
+    elif request.method == 'POST':
+        return jsonify({'message': 'Received a POST request at the default route.'})
+
+    else:
+        return jsonify({'error': 'Unsupported method'}), 405
+
+
 # Load the pre-trained model
 model_filename = 'final_model.joblib'
 loaded_model = joblib.load(model_filename)
