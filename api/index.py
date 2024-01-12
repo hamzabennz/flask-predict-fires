@@ -22,7 +22,7 @@ def default_route():
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Combine the current directory with the model filename
-model_filename = os.path.join(current_directory, 'random_forest_model.joblib')
+model_filename = os.path.join(current_directory, 'final_model.joblib')
 loaded_model = joblib.load(model_filename)
 
 
