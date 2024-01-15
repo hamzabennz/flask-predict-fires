@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "routes": [
-    { "source": "/(.*)", "destination": "/index" },
-    { "source": "/static/(.*)", "dest": "/static/$1" }
-  ],
   "builds": [
     { "src": "index.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/(.*)", "dest": "/index.py" }
   ]
 }
