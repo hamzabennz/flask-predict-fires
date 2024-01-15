@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <title>Predecting Fires in Bejaia</title>
+</head>
+<body>
+    <nav>
+        <p style="visibility: hidden;">hide</p>
+        <p>Predecting Fires in Bejaia</p>
+        <button id="button-question"><i class="bi bi-question-circle-fill"></i></button>
+    </nav>
+    <form id="form-predict">
+        <div class="first-inputs">
+            <div class="input" class="">
+                <label for="temperature">Temperature</label>
+    <select class="select-1" id="temperature" name="temperature">
+    <!-- Generate options from 1 to 60 using JavaScript -->
+    <script>
+            document.write(`<option value="--">--</option>`)
+        for (let i = 1; i <= 55; i++) {
+            document.write(`<option value="${i}">${i}c</option>`);
+        }
+    </script>
+</select>
+            </div>
+            <div class="input" class="">
+                <label for="rh">Humidity</label>
+    <select class="select-1" id="rh" name="rh">
+    <!-- Generate options from 1 to 60 using JavaScript -->
+    <script>
+            document.write(`<option value="--">--</option>`)
+        for (let i = 1; i <= 99; i++) {
+            document.write(`<option value="${i}">${i}%</option>`);
+        }
+    </script>
+</select>
+            </div>
+            <div class="input" class="">
+                <label for="ws">Wind Speed</label>
+    <select class="select-1" id="ws" name="ws">
+    <!-- Generate options from 1 to 60 using JavaScript -->
+    <script>
+            document.write(`<option value="--">--</option>`)
+
+        for (let i = 1; i <= 100; i++) {
+            document.write(`<option value="${i}">${i}km</option>`);
+        }
+    </script>
+</select>
+            </div>
+            <div class="input" class="">
+                <label for="rain">Rain</label>
+    <select class="select-1" id="rain" name="rain">
+    <!-- Generate options from 1 to 60 using JavaScript -->
+    <script>
+            document.write(`<option value="--">--</option>`)
+
+        for (let i = 0; i <= 80; i++) {
+            document.write(`<option value="${i}">${i}mm</option>`);
+        }
+    </script>
+</select>
+            </div>
+            <div class="input" class="">
+                <label for="dew">Dew point</label>
+    <select class="select-1" id="dew" name="dew">
+    <!-- Generate options from 1 to 60 using JavaScript -->
+    <script>
+            document.write(`<option value="--">--</option>`)
+        for (let i = 1; i <= 40; i++) {
+            document.write(`<option value="${i}">${i}c</option>`);
+        }
+    </script>
+</select>
+            </div>
+            <div class="input" class="">
+                <label for="pres">Pressure</label>
+    <select class="select-1" id="pres" name="pres">
+    <!-- Generate options from 1 to 60 using JavaScript -->
+    <script>
+document.write(`<option value="--">--</option>`)
+
+        for (let i = 900; i <= 1100; i++) {
+            document.write(`<option value="${i}">${i}</option>`);
+        }
+    </script>
+</select>
+            </div>
+        </div>
+        <div class="title">
+            <p>FWI System:</p>
+        </div>
+        <div class="second-inputs">
+            <div class="input" class="">
+                <label for="ffmc">FFMC</label>
+    <select class="select-2" id="ffmc" name="ffmc">
+    <!-- Generate options from 1 to 60 using JavaScript -->
+    <script>
+            document.write(`<option value="--">--</option>`)
+
+        for (let i = 1; i <= 100; i++) {
+            document.write(`<option value="${i}">${i}</option>`);
+        }
+    </script>
+</select>
+            </div>
+            
+                <div class="input" class="">
+                    <label for="dmc">DMC</label>
+        <select class="select-2" id="dmc" name="dmc">
+        <!-- Generate options from 1 to 60 using JavaScript -->
+        <script>
+            document.write(`<option value="--">--</option>`)
+
+            for (let i = 1; i <= 100; i++) {
+                document.write(`<option value="${i}">${i}</option>`);
+            }
+        </script>
+    </select>
+                </div>
+                
+                    <div class="input" class="">
+                        <label for="dc">DC</label>
+            <select class="select-2" id="dc" name="dc">
+            <!-- Generate options from 1 to 60 using JavaScript -->
+            <script>
+            document.write(`<option value="--">--</option>`)
+
+                for (let i = 1; i <= 100; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+                    </div>
+                    
+                        <div class="input" class="">
+                            <label for="isi">ISI</label>
+                <select class="select-2" id="isi" name="isi">
+                <!-- Generate options from 1 to 60 using JavaScript -->
+                <script>
+            document.write(`<option value="--">--</option>`)
+
+                    for (let i = 1; i <= 100; i++) {
+                        document.write(`<option value="${i}">${i}</option>`);
+                    }
+                </script>
+            </select>
+                        </div>
+                        
+                            <div class="input" class="">
+                                <label for="bui">BUI</label>
+                    <select class="select-2" id="bui" name="bui">
+                    <!-- Generate options from 1 to 60 using JavaScript -->
+                    <script>
+            document.write(`<option value="--">--</option>`)
+
+                        for (let i = 1; i <= 100; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+                            </div>
+                           
+                                <div class="input" class="">
+                                    <label for="fwi">FWI</label>
+                        <select class="select-2" id="fwi" name="fwi">
+                        <!-- Generate options from 1 to 60 using JavaScript -->
+                        <script>
+            document.write(`<option value="--">--</option>`)
+
+                            for (let i = 1; i <= 100; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                        </script>
+                    </select>
+                                </div>
+                            </div>
+                        
+                            
+        </div>
+        <button type="submit" name="predict" id="predict">Predict</button>
+    </form>
+    <container class="api">
+        <div class="cols">
+            <p>Date</p>
+            <p>Weather</p>
+            <p>Temp</p>
+            <p>Predection</p>
+        </div>
+        
+        {% for day_info in result[:4] %}
+        
+            <div class="row">
+                <div>{{ day_info['DAY'] }}/{{ day_info['MONTH'] }}</div>
+                <div >
+                    {% if day_info['Condition'] == 'Clear' %}
+                         Sunny☀️
+                    {% elif 'Rain' in day_info['Condition'] %}
+                        Rain🌧️
+                    {% elif day_info['Condition'] == 'Partially cloudy' %}
+                        Par cloudy🌤️
+                    {% elif day_info['Condition'] == 'Overcast' %}
+                        cloudy☁️
+                        <!-- Example: <i class="bi bi-icon-for-other-condition"></i> Other condition -->
+                    {% else %}
+                    {{day_info['Condition']}}
+                    {% endif %}
+                </div>
+                <div>{{ day_info['TEMPERATURE'] }}°C</div>
+                
+                <div class="{{ 'o' if day_info['PREDICTION'][0] == 1 else 'g' }}">
+                    {{ 'Po fires' if day_info['PREDICTION'][0] == 1 else 'No fires' }}
+                </div>
+            </div>
+         
+            {% endfor %}
+        
+        
+        <div class="soon">
+            <p>
+                Discover The Fire Predection for next 15 days
+            </p>
+            <button id="button-question" onclick="window.location.href='/10days'">
+                <i class="bi bi-arrow-right-circle-fill"></i>
+            </button>
+            
+        </div>
+    </container>
+
+    
+    <div id="popup"></div>
+    <div id="loading-spinner"></div>
+    <div id="overlay"></div>
+    <img src="/static/img/background.png" class="background">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script type="text/javascript">
+         $("#form-predict").submit(function(event) {
+        event.preventDefault();
+        $("#loading-spinner").show();
+        $("#overlay").show();
+
+        // Check if values are not --
+        if ($("#temperature").val() !== "--" &&
+            $("#rh").val() !== "--" &&
+            $("#ws").val() !== "--" &&
+            $("#rain").val() !== "--" &&
+            $("#dew").val() !== "--" &&
+            $("#pres").val() !== "--"
+            ) {
+
+            // All values are not --
+            // Make the AJAX POST request here
+            setTimeout(function () {
+                $("#overlay").hide();
+                // Hide loading spinner
+                $("#loading-spinner").hide();
+
+                // Make the AJAX POST request here
+                $.ajax({
+                    url: '/predict',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify($("#form-predict").serializeArray()), // Serialize the form data
+                    success: function (response) {
+                        window.location.href = `/result?feature_dict=${encodeURIComponent(JSON.stringify(response.feature_dict))}&model=${response.model}&prediction=${encodeURIComponent(JSON.stringify(response.prediction))}`;
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        // Handle the error
+                        console.error(error);
+                    }
+                });
+            }, 2000);
+        } else {
+            // Hide overlay
+            $("#overlay").hide();
+            // Handle the case where values are still --
+            $("#loading-spinner").hide();
+            $("#popup").text("Please select values for green fields.").fadeIn(300);
+                    setTimeout(function() {
+                        $("#popup").fadeOut(300);
+                    }, 3000);
+        }
+    });
+    </script>
+</body>
+</html>

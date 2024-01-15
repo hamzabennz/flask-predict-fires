@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/result.css">
+    <title>Result</title>
+</head>
+<body>
+    <nav>
+        <button id="button-question" onclick="window.location.href='/'"><i class="bi bi-arrow-left-circle-fill"></i></button>
+        <p>Predecting Fires in Bejaia</p>
+        <button id="button-question"><i class="bi bi-question-circle-fill"></i></button>
+    </nav>
+    <container class="result">
+        <p class="result-pre {% if prediction[0] == 0 %}g{% else %}o{% endif %}">{% if prediction[0] == 1 %}Possible Fires{% else %}No Fires{% endif %}</p>
+        <Div class="model">
+            <p>🟢 Predicted by model {{ model }}</p>
+
+        </Div>
+        <Div class="model">
+            <p>🟢 varaibles:</p>
+        </Div>
+        <div class="vars">
+            <div class="s-vars">
+                <p>> Temperature: {{ feature_dict['TEMPERATURE'] }}°c</p>
+                <p>> Humidity: {{ feature_dict['RH'] }}%</p>
+                <p>> Wind Speed: {{ feature_dict['WS'] }}km/h</p>
+                <p>> Rain: {{ feature_dict['RAIN'] }}mm</p>
+                <p>> Dew point: {{ feature_dict['DEW'] | default('--') }}°c</p>
+                <p>> Pressure: {{ feature_dict['PRES'] | default('--') }}Pha</p>
+            </div>
+            <div class="s-vars">
+                <p>> FFMC: {{ feature_dict['FFMC'] | default('--') }}</p>
+                <p>> DMC: {{ feature_dict['DMC'] | default('--') }}</p>
+                <p>> DC: {{ feature_dict['DC'] | default('--') }}</p>
+                <p>> ISI: {{ feature_dict['ISI'] | default('--') }}</p>
+                <p>> BUI: {{ feature_dict['BUI'] | default('--') }}</p>
+                <p>> FWI: {{ feature_dict['FWI'] | default('--') }}</p>
+            </div>
+        </div>
+    </container>
+    <img src="{% if prediction[0] == 1 %}/static/img/background-fire.png{% else %}/static/img/background.png{% endif %}" class="background">
+    
+</body>
+</html>
