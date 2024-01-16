@@ -1,4 +1,4 @@
-# This is the endpoint where to request for fire prediction (POST request) :
+# This is the website for fire prediction:
 https://flask-predict-fires.vercel.app/
 
 ## How it Works
