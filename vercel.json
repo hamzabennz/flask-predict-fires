@@ -7,6 +7,8 @@
     { "src": "/templates/(.*)", "dest": "/templates/$1" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/static/css/(.*)", "dest": "/static/css/$1" },
+    { "src": "/static/img/(.*)", "dest": "/static/img/$1" },
     { "src": "/(.*)", "dest": "/index.py" }
   ]
 }
